@@ -6,7 +6,7 @@ st.set_page_config(page_title="Dashboard Profissionais de TI", layout="wide")
 # Carregar dados
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/profissionais_ti.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/MCR-prog/profissionaisTI/refs/heads/main/dashboard_profissionais_ti/data/profissionais_ti.csv")
     return df
 
 df = load_data()
@@ -39,4 +39,5 @@ elif pagina == "Cargos e Tecnologias":
     cargos.app(df_filtered)
 elif pagina == "Modelo de Trabalho":
     import pages.modelo_trabalho as modelo
+
     modelo.app(df_filtered)
